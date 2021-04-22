@@ -1,0 +1,50 @@
+<h1 class="page-blog">My Spetacular Blog</h1>
+<h3 class="subtitle">A totally false statement</h3> 
+
+<h4>New blog post</h4>
+<div>
+    <form class="page-form" action="" method="post" data-bind="submit: sendBlog" data-hasrequired="* Required Fields" data-mage-init='{"validation":{}}'>
+        <fieldset class="fieldset">
+            <div class="field name required">
+                <label for="titulo" class="label"><span>Titulo</span></label>
+                <div class="control">
+                    <input type="text" id="title" name="title" placeholder="Title" class="input-text" data-bind="value: title" data-validate='{"required":true}'>
+                </div>
+            </div>
+            <div class="field name required">
+                <label for="contenido" class="label"><span>Contenido</span></label>
+                <div class="control">
+                    <input type="textarea" id="content" name="content" placeholder="Content" class="input-text" data-bind="value: content" data-validate='{"required":true}'>
+                </div>
+            </div>
+            <div class="field name required">
+                <label for="email" class="label"><span>Email</span></label>
+                <div class="control">
+                    <input type="text" id="email" name="email" placeholder="Email" class="input-text" data-bind="value: email" data-validate='{"required":true}'>
+                </div>
+            </div>
+            <div class="field name">
+                <label for="img" class="label"><span>Img</span></label>
+                <div class="control">
+                    <input type="text" id="image" name="image" placeholder="Image" data-bind="value: image" class="input-text">
+                </div>
+            </div>
+        </fieldset>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <input type="hidden" name="hideit" id="hideit" value="" />
+                <button type="submit" title="Submit" class="action submit primary">
+                    <span>Save</span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div">
+
+<div class="blog" data-bind="foreach: blogs">
+    <div class="post">
+        <h3 class="blog-title" data-bind="text: title"></h3>
+        <p class="blog-content" data-bind="text: content"></p>
+        <img data-bind="attr: {'src': image}">
+    </div>
+</div>

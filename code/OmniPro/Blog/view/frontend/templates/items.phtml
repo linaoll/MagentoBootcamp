@@ -1,0 +1,39 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+$viewModel = $block->getViewModel();
+?>
+<style>
+    .blog_post{
+        padding: 10px;
+        margin: 10px 10px;
+        border-style: solid;
+        border-color: black;
+        border-width: 2px;
+        border-radius: 5px;
+    }
+    .title{
+        display: grid;
+        grid-template-columns: auto 200px;
+    }
+    .image{
+        float: left;
+        width: 160px;
+    }
+    .content{
+        display: grid;
+    }
+</style>
+
+<?php foreach($viewModel->getPosts() as $post): ?>
+    <div class="blog_post">    
+        <div class="title">
+            <h4><?= $post->getTitle() ?></h4>
+        </div>
+            <div class="image">
+                <img src="icono.jpg">
+            </div>
+                <div class= "content">
+                    <p><?= $post->getContent() ?></p>
+                </div>
+    </div>
+<?php endforeach; ?>
