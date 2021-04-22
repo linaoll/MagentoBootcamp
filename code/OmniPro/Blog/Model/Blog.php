@@ -110,8 +110,8 @@ class Blog extends \Magento\Framework\Model\AbstractExtensibleModel implements \
         return $this->getData(self::IMAGE);
     }
 
-    public function setImage($img) {
-        $this->setData(self::IMAGE, $img);
+    public function setImage($image) {
+        $this->setData(self::IMAGE, $image);
     }
 
     public function getExtensionAttributes()

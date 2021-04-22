@@ -66,10 +66,10 @@ interface BlogInterface extends \Magento\Framework\Api\ExtensibleDataInterface
     /**
      * Set Image
      *
-     * @param string $img
+     * @param string $image
      * @return void
      */
-    public function setImage($img);
+    public function setImage($image);
 
     /**
      * Get Image
