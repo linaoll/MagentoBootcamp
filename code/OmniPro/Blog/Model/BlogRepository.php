@@ -1,12 +1,16 @@
 <?php
 namespace OmniPro\Blog\Model;
 
+use OmniPro\Blog\Api\BlogRepositoryInterface;
 use OmniPro\Blog\Api\Data\BlogInterface;
+use OmniPro\Blog\Api\Data\BlogInterfaceFactory;
 use OmniPro\Blog\Api\Data\BlogSearchResultInterface;
+use OmniPro\Blog\Api\Data\BlogSearchResultInterfaceFactory;
 use \OmniPro\Blog\Model\ResourceModel\Blog\Collection;
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Api\SortOrder;
 use Magento\Framework\Exception\NoSuchEntityException;
+use OmniPro\Blog\Model\ResourceModel\Blog\CollectionFactory;
 
 class BlogRepository implements \OmniPro\Blog\Api\BlogRepositoryInterface
 {
@@ -14,15 +18,22 @@ class BlogRepository implements \OmniPro\Blog\Api\BlogRepositoryInterface
     protected $_blogCollectionFactory;
     protected $_blogSearchResultFactory;
 
+    /**
+     * @param \Psr\Log\LoggerInterface
+     */
+    private $logger;
+
     public function __construct(
-        \OmniPro\Blog\Api\Data\BlogInterfaceFactory $blogInterfaceFactory,
-        \OmniPro\Blog\Model\ResourceModel\Blog\CollectionFactory $blogCollectionFactory,
-        \OmniPro\Blog\Api\Data\BlogSearchResultInterfaceFactory $blogSearchResultInterfaceFactory
+        BlogInterfaceFactory $blogInterfaceFactory,
+        CollectionFactory $blogCollectionFactory,
+        BlogSearchResultInterfaceFactory $blogSearchResultInterfaceFactory,
+        \Psr\Log\LoggerInterface $logger
     )
     {
         $this->_blogInterfaceFactory = $blogInterfaceFactory;
         $this->_blogCollectionFactory = $blogCollectionFactory;
         $this->_blogSearchResultFactory = $blogSearchResultInterfaceFactory;
+        $this->logger = $logger;
     }
 
     public function getById($id)
