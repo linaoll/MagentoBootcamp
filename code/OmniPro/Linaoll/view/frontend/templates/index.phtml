@@ -1,0 +1,53 @@
+<?php
+
+/** @var \OmniPro\Linaoll\Block\Template $block */
+?>
+
+<div class="icono icon"></div>
+
+
+<div class="container">
+    <div class="tabs">
+        <button class="tab-button current" id="tab-ingreso">INGRESO</button>
+        <button class="tab-button" id="tab-registro">REGISTRO</button>
+    </div>
+    <div class="tab-content" id="tab-login">
+        <form>
+            <div class="tab-content .login" id="tab-login">
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" placeholder="Email">
+                <label for="password">CONTRASEÑA</label>
+                <input type="password" id="password" placeholder="Contraseña">
+                <div class="subscribe">
+                    <input type="checkbox" name="subscribirme">
+                    <p>Suscribirse al Newsletter</p>
+                </div>
+
+                <button type="submit">Ingreso</button><br>
+                <a href="#" id="forget">Olvide Contraseña</a>
+        </form>
+    </div>
+    <form>
+        <div class="tab-content .register" id="tab-register">
+            <label for="firstname">NOMBRE</label>
+            <input type="text" id="firstname" placeholder="Nombre">
+            <label for="lastname">APELLIDO</label>
+            <input type="text" id="lastname" placeholder="Apellido">
+            <label for="email-register">EMAIL</label>
+            <input type="email" id="email-register" placeholder="Email">
+            <label for="password-register">CONTRASEÑA</label>
+            <input type="password" id="password-register" placeholder="Contraseña">
+            <button type="submit" id="button-registro">Registro
+            </button>
+    </form>
+</div>
+</div>
+
+<div class="approved" id="registrado">
+    <div class="approved-text">
+        <p>Success</p>
+    </div>
+    <div class="approved-icon">
+        <img src='<?php echo $this->getViewFileUrl('OmniPro_Linaoll::images/oval.svg'); ?>' alt="image-icon">
+    </div>
+</div>
