@@ -2,33 +2,32 @@
 
 /** @var \OmniPro\Linaoll\Block\Template $block */
 ?>
-
 <div class="icono icon"></div>
 
 
 <div class="container">
     <div class="tabs">
-        <button class="tab-button current" id="tab-ingreso">INGRESO</button>
-        <button class="tab-button" id="tab-registro">REGISTRO</button>
+        <button class="tab-button" onclick="openLogin(event, 'tab-ingreso')" id="tabIngreso">INGRESO</button>
+        <button class="tab-button" onclick="openLogin(event, 'tab-registro')" id="tabRegistro">REGISTRO</button>
     </div>
-    <div class="tab-content" id="tab-login">
+    <div id="tab-ingreso" class="tab-content">
         <form>
-            <div class="tab-content .login" id="tab-login">
-                <label for="email">EMAIL</label>
-                <input type="email" id="email" placeholder="Email">
-                <label for="password">CONTRASEÑA</label>
-                <input type="password" id="password" placeholder="Contraseña">
-                <div class="subscribe">
-                    <input type="checkbox" name="subscribirme">
-                    <p>Suscribirse al Newsletter</p>
-                </div>
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" placeholder="Email">
+            <label for="password">CONTRASEÑA</label>
+            <input type="password" id="password" placeholder="Contraseña">
+            <div class="subscribe">
+                <input type="checkbox" name="subscribirme">
+                <p>Suscribirse al Newsletter</p>
+            </div>
 
-                <button type="submit">Ingreso</button><br>
-                <a href="#" id="forget">Olvide Contraseña</a>
+            <button type="submit">Ingreso</button><br>
+            <a href="#" id="forget">Olvide Contraseña</a>
+
         </form>
     </div>
-    <form>
-        <div class="tab-content .register" id="tab-register">
+    <div id="tab-registro" class="tab-content">
+        <form>
             <label for="firstname">NOMBRE</label>
             <input type="text" id="firstname" placeholder="Nombre">
             <label for="lastname">APELLIDO</label>
@@ -38,16 +37,17 @@
             <label for="password-register">CONTRASEÑA</label>
             <input type="password" id="password-register" placeholder="Contraseña">
             <button type="submit" id="button-registro">Registro
+                <a href="https://app.prueba-magento.test/prueba_store_view/inez-full-zip-jacket.html">
             </button>
-    </form>
-</div>
+        </form>
+    </div>
 </div>
 
-<div class="approved" id="registrado">
-    <div class="approved-text">
+<div class="succes" id="registrado">
+    <div class="succes-text">
         <p>Success</p>
     </div>
-    <div class="approved-icon">
+    <div class="succes-icon">
         <img src='<?php echo $this->getViewFileUrl('OmniPro_Linaoll::images/oval.svg'); ?>' alt="image-icon">
     </div>
 </div>

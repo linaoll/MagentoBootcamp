@@ -1,24 +1,14 @@
-require(['jquery'], function($){ 
-    $( document ).ready(function() {
-        // alert("primer alerta");
-        $( ".container .tabs .tab-content " ).on( "click", function() {
-
-            if($(this).hasClass("login")){
-                $(this).find('a').addClass("active");
-                $(".container .tab-content").removeClass("active");
-                $(".tab-content #tab-login").addClass("active");
-                $(".tab-content #tab-register").removeClass("active");
-            }
-            else if($(this).hasClass("register")){
-                $(this).find('a').addClass("active");
-                $(".container.tab-content.login").removeClass("active");
-                $(".tab-content #tab-register").addClass("active");
-                $(".tab-content #tab-login").removeClass("active");
-            }
-        });
-
-
-
-        
-    });    
- });
+function openLogin(evt, loginName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(loginName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+    

@@ -1,0 +1,85 @@
+//
+//  Mobile @screen__m
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    .product-info-main {
+
+        .product-add-form {
+    
+            padding-top: 0;
+    
+            .product-options-wrapper {
+    
+                .swatch-attribute {
+                
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+        
+                    .swatch-attribute-selected-option {
+                        display: none;
+                    }
+        
+                    span {
+                        color: @color-black;
+                        margin-right: 15px;
+                        font-family: @font-family;
+                        font-size: @font-size-14;
+                        font-weight: 500;
+                        line-height: 40px;
+                        text-transform: uppercase;
+                    }
+                }
+    
+                .swatch-attribute.size .swatch-option.selected, .swatch-attribute.manufacturer .swatch-option.selected {
+                    background-color: @color-black;
+                    outline: none;
+                    color: @color-white;
+                }
+
+                .swatch-attribute.size .swatch-option, .swatch-attribute.manufacturer .swatch-option {
+                    background: @color-white-3;
+                }
+    
+            }
+    
+            .product-options-bottom {
+    
+                .field.qty {
+                    display: flex;
+                    align-items: center;
+    
+                    .label {
+                        font-family: @font-family;
+                        font-size: @font-size-14;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        margin-right: 15px;
+                        line-height: 40px;
+                    }
+    
+                    .qty-buttons{
+                        border: 1px solid @color-white-2;
+                        background: @color-white;
+                        display: flex;
+                        .control{
+                            .input-text.qty{
+                                border: none;
+                            }
+                        }
+                        .qty-buttons_button{
+                            background:@color-white;
+                            border: 0px solid @color-white;
+                        }
+                    }
+                }
+    
+                
+    
+            }            
+        }
+    }
+
+}

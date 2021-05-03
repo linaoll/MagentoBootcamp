@@ -1,0 +1,105 @@
+//
+//  Mobile @screen__m
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    .product-info-main {
+    
+        .page-title-wrapper {
+    
+            text-align: center;
+            padding: 5px;
+            
+            h1 {
+                color: @color-black-ligth-2;
+                font-family: @font-family;
+                font-size: @font-size-30;
+                font-weight: 500;
+                line-height: 30px;
+                margin-bottom: 0;
+            }
+        }
+    
+        .product-reviews-summary {
+            
+            float: none;
+            text-align: center;
+            margin-bottom: 0;
+    
+            .rating-summary {
+                margin-right: 0;
+
+                .rating-result {
+                    span::before{
+                        color: @color-red;
+                    }
+                }
+
+            }
+    
+            .reviews-actions {
+    
+                line-height: 20px;
+                font-family: @font-family;
+                font-size: @font-size-16;      
+    
+                a {
+                    color: @color-gray-2;
+                }
+    
+            }
+        }
+    
+        .product-info-price{
+    
+            text-align: center;
+            padding: 10px;
+    
+            .price-box{
+    
+                .price-container{
+    
+                    .price-label{
+    
+                        display: none;
+                    }
+    
+                    .price {
+                        color: @color-black;
+                        font-family: @font-family;
+                        font-size: @font-size-24;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    
+        
+    
+    }
+    
+    .product.info.detailed {
+        .product.data.items {
+            #tab-label-description a {
+                font-family: @font-family;
+                font-size: @font-size-16;
+                font-weight: 500;
+                line-height: 30px;
+                cursor: default;            
+            }
+            #tab-label-description a::after {
+                display: none;            
+            }       
+            #description {
+
+                p{
+                    font-family: @font-family;
+                    font-size: @font-size-14;
+                }
+
+            } 
+        }
+    }
+    
+}
